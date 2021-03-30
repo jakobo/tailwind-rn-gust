@@ -9,7 +9,8 @@ You should review the Pitch / Anti-Pitch to make sure this technology is a good 
 ## Pitch
 
 ```jsx
-// after
+import { gust } from "tailwind";
+
 const MyNewComponent = gust(MyComponent, null, (props) => {
   const [active, activeListeners] = useEvent(["onFocus", "onBlur"], props);
   const result = useMemo(
@@ -69,9 +70,11 @@ const { tailwind, getColor, gust } = wrap(create(styles));
 export { tailwind, getColor, gust };
 ```
 
-(optionally) you can create an [alias](https://medium.com/@sterlingcobb/adding-alias-to-create-react-native-app-crna-in-2-minutes-45574f4a7729) so that you can just do `import {tailwind} from "tailwind"` anywhere in your code and not worry about paths.
+(optionally) you can create an [alias](https://medium.com/@sterlingcobb/adding-alias-to-create-react-native-app-crna-in-2-minutes-45574f4a7729) so that you can just do `import {tailwind, getColor, gust} from "tailwind"` anywhere in your code and not worry about paths.
 
 # API (🍃 = Unique to gust)
+
+The following functions are exposed as a result of calling `wrap()` around a tailwind-rn result object. Anything not listed here is the original tailwind-rn result.
 
 ## tailwind(classNames, flags)
 
@@ -173,6 +176,7 @@ If you're interested in writing a few, it would be appreciated. Ideally the surf
 
 A first pass was made at the types to make the library VS Code friendly. The code was written in JavaScript to keep it accessible to as many developers as possible.
 
-# License
+# License, Credits
 
-MIT Licensed
+- MIT Licensed
+- Original ideal from [Matt Apperson](https://github.com/vadimdemedes/tailwind-rn/issues/19)
