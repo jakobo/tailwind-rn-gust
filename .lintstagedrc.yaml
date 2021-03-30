@@ -1,0 +1,8 @@
+# global configurations, these are always cleaned
+"*.{json,gql,md,yaml,yml}":
+  - prettier --write
+
+# Root JS files
+"{./*}.{js,ts,jsx,tsx,vue}":
+  - yarn eslint --fix
+  - prettier --write

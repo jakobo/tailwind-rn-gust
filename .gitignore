@@ -1,0 +1,22 @@
+# !0 installs
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+# Build Artifacts
+dist
+
+# Standard node affair
+node_modules
+*.log
+
+# Emacs/Vims
+*.swp
+*.save
+
+# Macs
+.DS_Store
