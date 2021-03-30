@@ -102,7 +102,7 @@ _returns_ A `string` containing the hex or `rgba` color value.
 
 Flags are gust's way of enabling and disabling tailwind pseudo elements such as `active:`, `hover:`, `md:`, and more. gust has no opinion on how these flags are generated, though I'd recommend memoizing complex flags. If your flags are coming from other React hooks, the key bits are likely already memoized for you.
 
-When calculating flags, your tailwind class names are split on a colon `:` and then the psuedo selectors are checked against the `flag` objects. If all flags match, the tailwind class is included in the final output. The class list is sorted to priorize fewer pseudo selectors at the front. This allows for CSS' natural specifity and the expectation when writing tailwind CSS. (ie `dark:active:text-blue-100` should be more important and occur later than `dark:text-white` to ensure the style object is as expected)
+When calculating flags, your tailwind class names are split on a colon `:` and then the psuedo selectors are checked against the `flag` objects. If all flags match, the tailwind class is included in the final output. The class list is sorted so that higher specificity items occur later in the class declaration. For example, `dark:hover:bg-red-500` will be moved after `hover:bg-red-500` as a rough approximation of pseudo selector behavior in the browser.
 
 ## useEvent([eventIn, eventOut], props) 🍃
 
