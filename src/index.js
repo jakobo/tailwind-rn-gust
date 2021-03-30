@@ -46,28 +46,24 @@ export const useEvent = (select, rest) => {
 
 // based on code developed by Matt Apperson
 // https://github.com/vadimdemedes/tailwind-rn/issues/19
-// resolves tailwind's variant prefixes based on provided flags
+// resolves tailwind's variant prefixes based flags
 const mapPseudoToStyle = (styles, selectors) => {
   if (!selectors) return styles;
-
-  // convert to individual statements
-  // drop anything where all pseudos != true
-  // clean and return finalized class names
-  return `${styles}`
-    .split(" ")
-    .map((c) => {
-      if (!c.includes(":")) return c;
-      const parts = c.split(":");
-      const pfx = parts.slice(0, -1);
-      const cName = parts.slice(-1, 1);
-      if (pfx.filter((p) => selectors[p]).length === pfx.length) {
-        return cName;
-      } else {
-        return null;
-      }
-    })
-    .filter((t) => t)
-    .join(" ");
+  return (
+    `${styles}`
+      .split(" ")
+      .filter((c) => {
+        if (!c.indexOf(":") === -1) return true;
+        const ps = c.split(":").slice(0, -1);
+        const filtered = ps.map((p) => selectors[p]).filter((v) => v);
+        return filtered.length >= ps.length;
+      })
+      .sort((a, b) => {
+        return a.split(":").length - 1 - (b.split(":").length - 1);
+      })
+      .map((c) => c.split(":").pop())
+      .join(" ")
+  );
 };
 
 /**
