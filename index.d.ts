@@ -14,3 +14,5 @@ export default function wrap(
     useConditions?: function
   ) => function;
 };
+
+export const useEvent = (selectors: [string, string], props: object) => [string, object];

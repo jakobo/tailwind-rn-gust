@@ -158,5 +158,6 @@ export default function wrap({ tailwind: t, getColor: gc, ...rest }) {
     Gusted.displayName = `${Component.displayName || "Component"} (gust)`;
     return Gusted;
   };
+  
   return { tailwind, getColor, gust, ...rest };
 }

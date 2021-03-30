@@ -70,7 +70,7 @@ const { tailwind, getColor, gust } = wrap(create(styles));
 export { tailwind, getColor, gust };
 ```
 
-(optionally) you can create an [alias](https://medium.com/@sterlingcobb/adding-alias-to-create-react-native-app-crna-in-2-minutes-45574f4a7729) so that you can just do `import {tailwind, getColor, gust} from "tailwind"` anywhere in your code and not worry about paths.
+(optionally) you can create an [alias](https://medium.com/@sterlingcobb/adding-alias-to-create-react-native-app-crna-in-2-minutes-45574f4a7729) so that you can just do `import {tailwind, getColor, gust} from "tailwind"` anywhere in your code and not worry about paths. You may also wish to expose `useEvent` in this way for consistency.
 
 # API (🍃 = Unique to gust)
 
@@ -144,10 +144,11 @@ Similar to how `styled` and other CSS-in-JS libraries work, `gust()` allows you 
 
 ```js
 import { useMemo } from "react";
-import gust, { useEvent } from "tailwind-rn-gust";
+import { gust } from "tailwind";
+import { useEvent } from "tailwind-rn-gust";
 
 const MyNewComponent = gust(MyComponent, "text-red-200", (props) => {
-  // REMINDER: You must conform to the "Rules of Hooks" or you will have a very bad time
+  // REMINDER: You must conform to the "Rules of Hooks"
   // https://reactjs.org/docs/hooks-rules.html
   const [active, activeListeners] = useEvent(["onFocus", "onBlur"], props);
   const result = useMemo(
