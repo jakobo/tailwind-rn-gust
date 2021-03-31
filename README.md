@@ -1,4 +1,6 @@
-# tailwind-rn-gust 🍃: className support for tailwind-rn; Tailwind Class Names in React Native
+# tailwind-rn-gust 🍃
+
+**className support for tailwind-rn; Tailwind Class Names in React Native**
 
 **gust** (tailwind-rn-gust, MIT) is a wrapper around [Vadim Demedes' tailwind-rn library](https://github.com/vadimdemedes/tailwind-rn) to offer enhanced functionality found in more common CSS-in-JS libraries such as component generation plus the ability to translate the `className` prop to the `style` prop in React Native.
 
