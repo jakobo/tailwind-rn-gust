@@ -176,11 +176,11 @@ We're not restricted to gust's `useEvent` hook either. `useColorScheme` (react-n
 
 This library does not have tests yet.
 
-If you're interested in writing a few, it would be appreciated. Ideally the surface area of gust is low enough that the only place of concern is `gust()` itself; but that's about 8 lines of code as of this writing.
+It is 1.0.0+ because the API is pretty stable at this point and we'd like to clearly communicate breaking changes to `wrap` (default export), `gust`, `useEvent`, or changes to the underlying `tailwind` and `getColor` functions.
 
 # Types
 
-A first pass was made at the types to make the library VS Code friendly. The code was written in JavaScript to keep it accessible to as many developers as possible.
+Currently typing information is exposed via JS Doc Comments. PRs are welcome from people well-versed in Generics, Intersections, or other appropriate typings.
 
 # License, Credits
 
