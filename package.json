@@ -1,15 +1,13 @@
 {
   "name": "tailwind-rn-gust",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "className support for tailwind in React Native",
   "main": "dist/index.js",
   "repository": "https://github.com/jakobo/tailwind-rn-gust",
   "author": "Jakob Heuser <jakob@codedrift.com>",
   "license": "MIT",
   "scripts": {
-    "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable",
+    "prepare": "husky install",
     "clean": "rm -rf dist",
     "build": "babel src --presets=@babel/preset-env,@babel/preset-react --out-dir dist",
     "lint-staged": "lint-staged",
