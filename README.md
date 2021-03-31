@@ -4,9 +4,11 @@
 
 **gust** (tailwind-rn-gust, MIT) is a wrapper around [Vadim Demedes' tailwind-rn library](https://github.com/vadimdemedes/tailwind-rn) to offer enhanced functionality found in more common CSS-in-JS libraries such as component generation plus the ability to translate the `className` prop to the `style` prop in React Native.
 
+All styles are generated from Tailwind CSS source and not hard-coded, which makes it easy to keep this & tailwind-rn up to date with the latest changes and fixes in Tailwind CSS itself.
+
 `yarn install tailwind-rn-gust tailwind-rn` or `npm install tailwind-rn-gust tailwind-rn`
 
-You should review the Pitch / Anti-Pitch to make sure this technology is a good fit for your problem.
+![](gust-header.png)
 
 ## Pitch
 
