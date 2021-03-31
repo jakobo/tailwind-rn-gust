@@ -8,7 +8,7 @@ All styles are generated from Tailwind CSS source and not hard-coded, which make
 
 `yarn install tailwind-rn-gust tailwind-rn` or `npm install tailwind-rn-gust tailwind-rn`
 
-![](gust-header.png)
+![](tailwind-rn-gust.png)
 
 ## Pitch
 
