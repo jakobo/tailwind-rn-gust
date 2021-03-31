@@ -1,6 +1,6 @@
 {
   "name": "tailwind-rn-gust",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "className support for tailwind in React Native",
   "main": "dist/index.js",
   "repository": "https://github.com/jakobo/tailwind-rn-gust",
