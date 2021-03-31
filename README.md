@@ -1,6 +1,6 @@
 # tailwind-rn-gust 🍃
 
-**className support for tailwind-rn; Tailwind Class Names in React Native**
+**className support for tailwind-rn; brings tailwind class names to React Native**
 
 **gust** (tailwind-rn-gust, MIT) is a wrapper around [Vadim Demedes' tailwind-rn library](https://github.com/vadimdemedes/tailwind-rn) to offer enhanced functionality found in more common CSS-in-JS libraries such as component generation plus the ability to translate the `className` prop to the `style` prop in React Native.
 
@@ -11,7 +11,8 @@ You should review the Pitch / Anti-Pitch to make sure this technology is a good 
 ## Pitch
 
 ```jsx
-import { gust } from "tailwind";
+import React, { useMemo } from "react";
+import { gust, useEvent } from "tailwind";
 
 const MyNewComponent = gust(MyComponent, null, (props) => {
   const [active, activeListeners] = useEvent(["onFocus", "onBlur"], props);
@@ -65,14 +66,14 @@ Then, you'll need to create a custom tailwind configuration. (These steps are fr
 
 ```js
 import { create } from "tailwind-rn";
-import wrap from "tailwind-rn-gust";
+import wrap, { useEvent } from "tailwind-rn-gust";
 import styles from "./styles.json";
 
 const { tailwind, getColor, gust } = wrap(create(styles));
-export { tailwind, getColor, gust };
+export { tailwind, getColor, gust, useEvent };
 ```
 
-(optionally) you can create an [alias](https://medium.com/@sterlingcobb/adding-alias-to-create-react-native-app-crna-in-2-minutes-45574f4a7729) so that you can just do `import {tailwind, getColor, gust} from "tailwind"` anywhere in your code and not worry about paths. You may also wish to expose `useEvent` in this way for consistency.
+(optionally) you can create an [alias](https://medium.com/@sterlingcobb/adding-alias-to-create-react-native-app-crna-in-2-minutes-45574f4a7729) so that you can just do `import {tailwind, getColor, gust} from "tailwind"` anywhere in your code and not worry about paths. You may also wish to expose `useEvent` in this way for consistency per the example.
 
 # API (🍃 = Unique to gust)
 
