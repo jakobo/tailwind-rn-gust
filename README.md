@@ -1,3 +1,6 @@
+
+> ⚠️ It's recommended to use either [tailwind-rn](https://github.com/vadimdemedes/tailwind-rn) (which this library depended on) or [twrnc](https://github.com/jaredh159/tailwind-react-native-classnames). The `style` property is too much a part of React Native, and it is unlikely we'll see browser-like class name functionality in the near future. If you'd like to still use a custom property such as `sx`, consider [dripsy](https://github.com/nandorojo/dripsy)
+
 # tailwind-rn-gust 🍃
 
 **className support for tailwind-rn; brings tailwind class names to React Native**
